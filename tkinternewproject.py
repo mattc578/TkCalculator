@@ -105,9 +105,6 @@ def backclick(imagenum):
                            command=lambda: forwardbutton(imagenum + 1))
     buttonforward.grid(row=1, column=2)
 
-
-
-
 buttonforward = Button(root, text='→', fg='black', bg='#d3d3d3', width=15, height=3, padx=5, pady=3, command=lambda: forwardbutton(1))
 buttonforward.grid(row=1, column=2)
 buttonquit = Button(root, text='Quit', fg='black', bg='#d3d3d3', width=10, height=3, padx=5, pady=3, command=root.quit)
