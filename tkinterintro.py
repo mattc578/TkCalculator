@@ -5,6 +5,7 @@ root = Tk()
 root.title('Personal Calculator')
 icon = PhotoImage(file='C:\calcpic.png')
 root.iconphoto(True, icon)
+
 e = Entry(root, width=40)
 e.grid(row=0, column=0, columnspan=3, padx=5, pady=6)
 count = 0
