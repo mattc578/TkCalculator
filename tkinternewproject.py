@@ -18,7 +18,8 @@ currenttiger = Label(root, image=bengal, height=600, compound='bottom', width=10
 currenttigerinfo = Label(root, text='Bengal Tiger', font=('Arial', 35, 'bold'))
 currenttiger.grid(row=0, column=0, columnspan=3)
 currenttigerinfo.grid(row=0, column=0, columnspan=3)
-
+status = Label(root, text=f'tiger 1 of {len(tigers)}', anchor=E, relief=SUNKEN)
+status.grid(row=2, column=0, columnspan=3, sticky=W+E)
 
 def forwardbutton(imagenum):
     global currenttiger
@@ -38,23 +39,31 @@ def forwardbutton(imagenum):
         buttonforward = Button(root, text='→', fg='black', bg='#d3d3d3', width=15, height=3, padx=5, pady=3,
                                command=lambda: forwardbutton(imagenum + 1))
         buttonforward.grid(row=1, column=2)
+        status = Label(root, text=f'tiger {imagenum+1} of {len(tigers)}', anchor=E, relief=SUNKEN)
+        status.grid(row=2, column=0, columnspan=3, sticky=W+E)
     if imagenum == 2:
         currenttigerinfo = Label(root, text='Malayan Tiger', font=('Arial', 35, 'bold'))
         currenttigerinfo.grid(row=0, column=0, columnspan=3)
         buttonforward = Button(root, text='→', fg='black', bg='#d3d3d3', width=15, height=3, padx=5, pady=3,
                                command=lambda: forwardbutton(imagenum + 1))
         buttonforward.grid(row=1, column=2)
+        status = Label(root, text=f'tiger {imagenum+1} of {len(tigers)}', anchor=E, relief=SUNKEN)
+        status.grid(row=2, column=0, columnspan=3, sticky=W+E)
     if imagenum == 3:
         currenttigerinfo = Label(root, text='Siberian Tiger', font=('Arial', 35, 'bold'))
         currenttigerinfo.grid(row=0, column=0, columnspan=3)
         buttonforward = Button(root, text='→', fg='black', bg='#d3d3d3', width=15, height=3, padx=5, pady=3,
                                command=lambda: forwardbutton(imagenum + 1))
         buttonforward.grid(row=1, column=2)
+        status = Label(root, text=f'tiger {imagenum+1} of {len(tigers)}', anchor=E, relief=SUNKEN)
+        status.grid(row=2, column=0, columnspan=3, sticky=W + E)
     elif imagenum == 4:
         currenttigerinfo = Label(root, text='Sumatran Tiger', font=('Arial', 35, 'bold'))
         currenttigerinfo.grid(row=0, column=0, columnspan=3)
         buttonforward = Button(root, text='→', state=DISABLED)
         buttonforward.grid(row=1, column=2)
+        status = Label(root, text=f'tiger {imagenum+1} of {len(tigers)}', anchor=E, relief=SUNKEN)
+        status.grid(row=2, column=0, columnspan=3, sticky=W+E)
 
     buttonbackward = Button(root, text='←', fg='black', bg='#d3d3d3', width=15, height=3, padx=5, pady=3, command=lambda: backclick(imagenum-1))
     buttonbackward.grid(row=1, column=0)
@@ -74,6 +83,8 @@ def backclick(imagenum):
         currenttigerinfo = Label(root, text='Bengal Tiger', font=('Arial', 35, 'bold'))
         currenttigerinfo.grid(row=0, column=0, columnspan=3)
         currenttiger.grid(row=0, column=0, columnspan=3)
+        status = Label(root, text=f'tiger {imagenum+1} of {len(tigers)}', anchor=E, relief=SUNKEN)
+        status.grid(row=2, column=0, columnspan=3, sticky=W+E)
     elif imagenum > 0:
         currenttiger = Label(root, image=tigers[imagenum], height=600, width=1000)
         currenttiger.grid(row=0, column=0, columnspan=3)
@@ -83,23 +94,31 @@ def backclick(imagenum):
             buttonbackward = Button(root, text='←', fg='black', bg='#d3d3d3', width=15, height=3, padx=5, pady=3,
                                     command=lambda: backclick(imagenum - 1))
             buttonbackward.grid(row=1, column=0)
+            status = Label(root, text=f'tiger {imagenum+1} of {len(tigers)}', anchor=E, relief=SUNKEN)
+            status.grid(row=2, column=0, columnspan=3, sticky=W + E)
         if imagenum == 2:
             currenttigerinfo = Label(root, text='Malayan Tiger', font=('Arial', 35, 'bold'))
             currenttigerinfo.grid(row=0, column=0, columnspan=3)
             buttonbackward = Button(root, text='←', fg='black', bg='#d3d3d3', width=15, height=3, padx=5, pady=3,
                                     command=lambda: backclick(imagenum - 1))
             buttonbackward.grid(row=1, column=0)
+            status = Label(root, text=f'tiger {imagenum+1} of {len(tigers)}', anchor=E, relief=SUNKEN)
+            status.grid(row=2, column=0, columnspan=3, sticky=W + E)
         if imagenum == 3:
             currenttigerinfo = Label(root, text='Siberian Tiger', font=('Arial', 35, 'bold'))
             currenttigerinfo.grid(row=0, column=0, columnspan=3)
             buttonbackward = Button(root, text='←', fg='black', bg='#d3d3d3', width=15, height=3, padx=5, pady=3,
                                     command=lambda: backclick(imagenum - 1))
             buttonbackward.grid(row=1, column=0)
+            status = Label(root, text=f'tiger {imagenum+1} of {len(tigers)}', anchor=E, relief=SUNKEN)
+            status.grid(row=2, column=0, columnspan=3, sticky=W + E)
         elif imagenum == 4:
             currenttigerinfo = Label(root, text='Sumatran Tiger', font=('Arial', 35, 'bold'))
             currenttigerinfo.grid(row=0, column=0, columnspan=3)
             buttonbackward = Button(root, text='←', fg='black', bg='#d3d3d3', width=15, height=3, padx=5, pady=3,
                                     command=lambda: backclick(imagenum - 1))
+            status = Label(root, text=f'tiger {imagenum+1} of {len(tigers)}', anchor=E, relief=SUNKEN)
+            status.grid(row=2, column=0, columnspan=3, sticky=W + E)
             buttonbackward.grid(row=1, column=0)
     buttonforward = Button(root, text='→', fg='black', bg='#d3d3d3', width=15, height=3, padx=5, pady=3,
                            command=lambda: forwardbutton(imagenum + 1))
